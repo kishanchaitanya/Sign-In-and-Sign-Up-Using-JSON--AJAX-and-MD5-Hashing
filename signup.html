@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Sign Up</title>
+        
+        <link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/basicStyle.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Kreon:300,400,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body class="signupBodyStyle" onload="randomchords()">
+         <br>
+        <form id="myForm" action="userInfo.php" method="post">
+            <table align="center">
+                <tr>
+                    <td><label for="FirstNameLabel" class="tableproperties">First Name</label></td>
+                    <td><input type="text" class="signupTextBoxStyle" name="firstName" placeholder="Enter First Name" id="FirstNameBox" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="LastNameLabel" class="tableproperties">Last Name</label></td>
+                    <td><input type="text" name="lastName" placeholder="Enter Last Name" id="LastNameBox" class="signupTextBoxStyle" required></td>
+                </tr>
+            <tr>
+                <td><label for="eMailLabel" class="tableproperties">Email</label></td>
+                <td><input type="email" name="email" placeholder="Enter Email" id="eMailBox" class="signupTextBoxStyle" required></td>
+                <td id="emailStatus"></td>
+            </tr>
+            
+            <tr>
+                <td><label for="passwordLabel" class="tableproperties">Password</label></td>
+                <td><input type="password" name="password" placeholder="Enter Password" id="passwordTextbox" maxlength="24" class="signupTextBoxStyle" required></td>
+                <td><i class="fa fa-info-circle infoIcon" title="Password must contain minimum 3 upper case, 2 lower case and 2 special chars"></i></td>
+                <td><progress value="0" max="100" class="progressBar" id="progressStatus"></progress></td>
+                <td id="passwordStrength"></td>
+            </tr>
+            
+            <tr>
+                <td><label for="confirmPasswordLabel" class="tableproperties">Confirm Password</label></td>
+                <td><input type="password" name="confirmpassword" placeholder="Must be same as password" maxlength="24" id="confirmPasswordBox" class="signupTextBoxStyle" required></td>
+                <td id="passwordMismatch"></td>
+            </tr>
+            
+            <tr>
+                <td><label for="dobLabel" class="tableproperties">D.O.B</label></td>
+                <td><input type="date" name="dob" placeholder="Enter D.O.B" id="dobBox" class="signupTextBoxStyle" required></td>
+            </tr>
+            
+            <tr>
+                <td><label for="dobTimeLabel" class="tableproperties">D.O.B with time</label></td>
+                <td><input type="datetime" name="dobTime" placeholder="Enter D.O.B with time" id="dobTimeBox" class="signupTextBoxStyle" required></td>
+            </tr>
+            
+            <tr>
+                <td><label for="localDOBLabel" class="tableproperties">Local D.O.B</label></td>
+                <td><input type="datetime-local" name="localdob" placeholder="Enter Local D.O.B" id="localDobBox" class="signupTextBoxStyle" required></td>
+            </tr>
+            
+            <tr>
+                <td><label for="ssnLabel" class="tableproperties">SSN</label></td>
+                <td><input type="text" name="ssn" placeholder="000-00-0000" id="ssnBox" class="signupTextBoxStyle" required pattern="^(\d{3}-\d{2}-\d{4})$"></td>
+            </tr>
+
+            <tr>
+                <td><label for="usPhoneNumber" class="tableproperties" >US Phone Number</label></td>
+                <td><input type="text" name="phone" placeholder="000-000-0000" id="usNumberBox" class="signupTextBoxStyle" required></td>
+                <td id="phoneStatus"></td>
+            </tr>
+            
+            <tr>
+                <td><label for="creditLabel" class="tableproperties" id="CreditText">Credit Card Number</label></td>
+                <td><input type="text" name="creditCardNumber" placeholder="Enter Credit Card Number" id="creditBox" class="signupTextBoxStyle" required pattern="^[0-9]{12}(?:[0-9]{4})?$"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div id="contentHide2">
+                        <img src="http://upload.wikimedia.org/wikipedia/en/1/10/Internet_Explorer_7_Logo.png" id="drag1"  draggable="true" ondragstart="drag(event)" style="width: 50px;height:50px;padding-right: 190px;"/>
+                        <img src="http://1.bp.blogspot.com/-I2P8YPdPMP4/UsQ8KHjHznI/AAAAAAAAD0k/xG5FrDEvL2I/s1600/soccer-ball-logo-vectorgirl-playing-soccer-clip-art-sports-download-vector-clip-art-all-sjvqe3iw.png" id="drag2" draggable="true" ondragstart="drag(event)" style="width: 50px;height:50px;padding-right: 190px;"/>
+                        <img src="http://pngimg.com/upload/rose_PNG658.png" id="drag3" draggable="true" ondragstart="drag(event)" style="width: 50px;height:50px;"/>
+                    <table id="tbl1">
+                       <tr>
+                          <td  colspan="3" id="div1" ondrop="joinFunction()" ondragover="allowDrop(event)" align="center"> Drop <span id="randomText">rose</span> here</td>
+                       </tr>
+                    </table>
+                    </div>
+                </td>
+            </tr>
+                
+            <tr>
+                <td colspan='2'>
+                    <div id="buttonHide">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block signupbuttonStyle" id="sub" disabled onclick="return submitDetails()">Create Account</button>
+                        </div>
+                    <button type="button" class="btn btn-success btn-lg btn-block signupbuttonStyle" onclick="location.href = 'signin.html';">Sign In</button>
+                    <button type="button" class="btn btn-danger btn-lg btn-block signupbuttonStyle" onclick="location.href = 'index.html';">Cancel</button>
+                </td>
+            </tr>
+            </table>
+        </form>
+        
+        <span id="result"></span>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/library.js"></script>
+    </body>
+</html>
